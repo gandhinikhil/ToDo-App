@@ -12,10 +12,10 @@ import com.example.ToDoApp.model.ToDo;
 @Service
 public class ToDoService {
 	
-	
+	@Autowired
 	IToDoRepo repo;
 	
-	@Autowired
+	
 	public List<ToDo>getAllToDoItems(){
 	
 	 ArrayList<ToDo> todoList = new ArrayList<>();

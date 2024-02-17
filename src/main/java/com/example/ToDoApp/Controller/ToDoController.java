@@ -7,13 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.example.ToDoApp.Service.ToDoService;
 import com.example.ToDoApp.model.ToDo;
 
 
 
-@Controller
+@RestController
 public class ToDoController {
 
 	@Autowired
@@ -29,7 +30,7 @@ public class ToDoController {
 	}
 	
 	
-	@GetMapping("/updateToDoStatus/{id}")
+	@GetMapping("/UpdateToDoStatus/{id}")
 	public String updateToDoStatus(@PathVariable Long id, RedirectAttributes redirectAttributes) {
 		
 		if (service.updatestatus(id)) {
@@ -45,7 +46,7 @@ public class ToDoController {
 		
 	}
 	
-	@GetMapping("/addToDoItem")
+	@GetMapping("/AddToDoItem")
 	public String addToDoItem(Model model) {
 		
 		model.addAttribute("todo", new ToDo());
