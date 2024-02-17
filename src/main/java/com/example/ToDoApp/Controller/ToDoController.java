@@ -14,12 +14,16 @@ import com.example.ToDoApp.model.ToDo;
 
 
 
-@RestController
+@Controller
 public class ToDoController {
 
 	@Autowired
 	private ToDoService service;
 	 
+	@GetMapping("/newfile")
+	public String newFile() {
+		return "NewFile";
+	}
 	@GetMapping({"/", "viewToDoList"})
 	public String viewAllToDoItems(Model model, @ModelAttribute("message") String message) {
 		
