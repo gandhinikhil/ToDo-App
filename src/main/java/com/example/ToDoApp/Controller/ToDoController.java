@@ -34,10 +34,10 @@ public class ToDoController {
 	}
 	
 	
-	@GetMapping("/UpdateToDoStatus/{id}")
+	@GetMapping("/updateToDoStatus/{id}")
 	public String updateToDoStatus(@PathVariable Long id, RedirectAttributes redirectAttributes) {
 		
-		if (service.updatestatus(id)) {
+		if (service.updateStatus(id)) {
 		
 			redirectAttributes.addFlashAttribute("message", "Update Success");
 			return "redirect:/viewToDoList";
@@ -50,7 +50,7 @@ public class ToDoController {
 		
 	}
 	
-	@GetMapping("/AddToDoItem")
+	@GetMapping("/addToDoItem")
 	public String addToDoItem(Model model) {
 		
 		model.addAttribute("todo", new ToDo());
